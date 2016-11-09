@@ -1,0 +1,14 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <p>Adresse : <%= @restaurant.address  %></p>
+  <p>Numéro de téléphone : <%= @restaurant.phone_number %></p>
+  <p>Catégorie : <%= @restaurant.category %> cuisine 🍴</p>
+  <p>Laisser une évaluation :</p>
+  <%= render 'reviews/form_review' %>
+  <h2>Toutes les évaluations de ce restaurant :</h2>
+  <% @restaurant.reviews.each do |review| %>
+    <ul class="list-unstyled">
+    <li><%= review.rating %>/5 • <%= review.content %></li>
+    </ul>
+  <% end %>
+</div>
